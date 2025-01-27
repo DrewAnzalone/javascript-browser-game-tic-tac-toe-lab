@@ -1,20 +1,71 @@
 body {
     background-color: gainsboro;
-    /* Use a system font, if none are available use an available sans-sarif */
     font-family: system-ui, sans-serif;
-    margin: 0;
+    text-align: center;
 }
 
 .board {
     display: flex;
     flex-wrap: wrap;
-    width: 325px;
+    width: 340px;
+    margin: auto;
 }
 
 .sqr {
     width: 30%;
     aspect-ratio: 1/1;
-    border: 3px solid black;
+    border: 2px solid black;
     font-size: 64px;
     text-align: center;
+    background-color: white;
+    margin: 2px;
+    position: relative;
+}
+button {
+    background-color: white;
+    border: 2px solid black;
+    margin: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* I had extra time and asked a friend for help on this self assigned level-up */
+.horizontal-line::after {
+    position: absolute;
+    background-color: red;
+    top: 44%;
+    left: -30px;
+    width: 390px;
+    height: 5px;
+    content: "";
+    z-index: 1;
+}
+
+.vertical-line::after {
+    position: absolute;
+    background-color: red;
+    left: 48%;
+    top: -25px;
+    height: 370px;
+    width: 5px;
+    content: "";
+    z-index: 1;
+}
+
+.diag-line::after {
+    position: absolute;
+    background-color: red;
+    top: -200px;
+    left: 48%;
+    width: 5px;
+    height: 500px;
+    content: "";
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.mirrored::after {
+    transform: rotate(45deg);
 }
